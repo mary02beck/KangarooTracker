@@ -1,4 +1,4 @@
-# 🦘 KangarooTracker.io
+ 🦘 KangarooTracker.io
 
 🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘  
 
@@ -6,25 +6,25 @@ A real-time kangaroo tracking simulation across Australia with a live interactiv
 
 ---
 
-## 🌏 Project Overview
+## Project Overview
 
 **KangarooTracker.io** is a full-stack simulation platform that models kangaroo movement in real time across Australia.
 
-### 🧠 Backend
+### Backend
 - Generates or ingests kangaroo position updates every few seconds  
 - Estimates short movement routes  
 - Exposes data via:
   - WebSocket API  
   - HTTP endpoints  
 
-### 🗄️ Database
+### Database
 - Stores:
   - Animal profiles  
   - Position history  
   - Tracks and paths  
 - Enables replay and movement analysis  
 
-### 🗺️ Frontend
+### Frontend
 - Interactive map of Australia
 - Real-time animated kangaroo movement
 - Visual features:
@@ -32,7 +32,7 @@ A real-time kangaroo tracking simulation across Australia with a live interactiv
   - Speed indicators
   - Filters (region, herd, time window)
 
-### 📊 Data
+###  Data
 For this project, movement data is simulated but can be based on:
 - Real kangaroo range maps
 - Open geographic datasets
@@ -43,7 +43,7 @@ For this project, movement data is simulated but can be based on:
 ##  MVP (Minimal Viable Product)
 
 ### Core Features
-- 🗺️ Map UI centered on Australia  
+- Map UI centered on Australia  
 - 🦘 10–50 simulated kangaroos displaying:
   - Current position
   - Recent path (polyline)
@@ -79,11 +79,23 @@ For this project, movement data is simulated but can be based on:
 ```bash
 mkdir kangaroo-tracker-backend
 cd kangaroo-tracker-backend
-
 python3 -m venv .venv
-source .venv/bin/activate   # macOS / zsh
-
+source .venv/bin/activate  # on macOS/zsh
 pip install fastapi "uvicorn[standard]"
 pip freeze > requirements.txt
+
+### Run The Backend 
+uvicorn main:app --reload --port 8000
+
+### Scaffold frontend Installs
+npm create vite@latest kangaroo-tracker-frontend -- --template react-ts
+cd kangaroo-tracker-frontend
+npm install
+npm install leaflet react-leaflet
+
+### Run The Frontend
+npm run dev
+
+🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘🦘
 
 
